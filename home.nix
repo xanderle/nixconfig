@@ -18,6 +18,14 @@
     ./applications/awesome
     ./applications/tmux ];
   home.packages = with pkgs; [
+    thunderbird
+    vscode
+    xfce.thunar 
+    xfce.xfconf 
+    xfce.tumbler 
+    xfce.exo
+    virt-manager
+    sshfs
     jq
     chromium
     nodePackages.node2nix

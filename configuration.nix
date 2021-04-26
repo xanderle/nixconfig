@@ -27,7 +27,7 @@
 # replicates the default behaviour.
 	networking.useDHCP = false;
 	networking.interfaces.enp5s0.useDHCP = true;
-	networking.interfaces.wlp4s0.useDHCP = true;
+	# networking.interfaces.wlp4s0.useDHCP = true;
 
 # Configure network proxy if necessary
 # networking.proxy.default = "http://user:password@proxy:port/";
@@ -73,7 +73,9 @@
 
 # Enable sound.
 sound.enable = true;
-hardware.pulseaudio.enable = true;
+hardware.pulseaudio = {
+	enable = true;
+};
 
 # Enable touchpad support (enabled default in most desktopManager).
 # services.xserver.libinput.enable = true;
@@ -81,7 +83,7 @@ hardware.pulseaudio.enable = true;
 # Define a user account. Don't forget to set a password with ‘passwd’.
 	users.users.xanderle= {
 		isNormalUser = true;
-		extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
+		extraGroups = [ "wheel" "docker" "libvirtd" ]; # Enable ‘sudo’ for the user.
 		shell=pkgs.zsh;
 	};
 # List packages installed in system profile. To search, run:
@@ -115,6 +117,7 @@ hardware.pulseaudio.enable = true;
 		nerdfonts
 	];
 	virtualisation.docker.enable = true;
+	virtualisation.libvirtd.enable = true;
 # This value determines the NixOS release from which the default
 # settings for stateful data, like file locations and database versions
 # on your system were taken. It‘s perfectly fine and recommended to leave

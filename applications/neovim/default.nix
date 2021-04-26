@@ -94,6 +94,8 @@ in
       vim-nerdtree-syntax-highlight
       vim-maximizer
       vim-markdown-composer
+      fugitive
+      airline
     ];
     extraConfig = ''
       source $HOME/.config/nvim/plug-config/coc.vim
